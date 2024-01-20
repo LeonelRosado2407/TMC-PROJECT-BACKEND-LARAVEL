@@ -3,10 +3,11 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import jQuery from 'jquery';
+window.$ = jQuery;
+import 'flowbite';
 import './bootstrap';
 import { createApp } from 'vue';
-
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -16,7 +17,14 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import Navbar from "./components/Navbar.vue";
+import NavbarItem from "./components/NavbarItem.vue"
+import FooterComponent from "./components/FooterComponent.vue";
+
 app.component('example-component', ExampleComponent);
+app.component('navbar',Navbar);
+app.component('navbar-item', NavbarItem);
+app.component('footer-component',FooterComponent);
 
 /**
  * The following block of code may be used to automatically register your
