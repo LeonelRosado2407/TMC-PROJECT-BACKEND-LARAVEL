@@ -22,3 +22,10 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/registro', function () {
     return view('API');
 })->name('registroApi');
+
+Route::get('/prueba', function () {
+    return view('Pruebas.pruebas');
+});
+
+
+

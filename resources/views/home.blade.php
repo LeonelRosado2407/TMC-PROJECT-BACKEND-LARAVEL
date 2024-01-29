@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
+ 
 @section('content')
 <div class="bg-gray-50 dark:bg-gray-900">
     <!-- Banner Section -->
     <div class="py-20 bg-gradient-to-r from-blue-500 to-blue-600 text-center text-white">
-        <h2 class="text-3xl mb-6">Welcome to our landing page</h2>
+        <h2 class="text-3xl mb-6">Hola papuritas</h2>
         <p class="leading-relaxed">This is a simple example of a landing page using tailwind css and flowbite.</p>
     </div>
 
