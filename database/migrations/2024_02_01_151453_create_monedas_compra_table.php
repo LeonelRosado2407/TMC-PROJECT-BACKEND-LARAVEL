@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nombre',150);
             $table->decimal('precio',8,2);
             $table->float('monedas');
+            $table->boolean('estatus');
             $table->timestamps();
         });
     }

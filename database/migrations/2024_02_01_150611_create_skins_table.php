@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nombre',150);
             $table->decimal('precio',8,2);
-            $table->string('imagen',250)->nullable();    
+            $table->string('imagen',250)->nullable();
+            $table->boolean('estatus');    
             $table->timestamps();
         });
     }

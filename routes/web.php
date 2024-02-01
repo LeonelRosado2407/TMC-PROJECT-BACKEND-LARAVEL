@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\config\PermisosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,12 @@ Route::get('/registro', function () {
 Route::get('/prueba', function () {
     return view('Pruebas.pruebas');
 });
+
+//rutas de configuraciones
+Route::middleware(['auth'])->group(function () {
+    Route::resource('/permisos', PermisosController::class)->names('permisos');
+});
+
 
 
 
