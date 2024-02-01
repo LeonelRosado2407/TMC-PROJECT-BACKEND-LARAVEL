@@ -23,6 +23,8 @@ import FooterComponent from "./components/FooterComponent.vue";
 import BackgroundComponent from "./components/BackgroundComponent.vue";
 import SidebarComponent from "./components/SidebarComponent.vue";
 import SidebarItemComponent from "./components/SidebarItemComponent.vue";
+import TableComponent from "./components/TableComponent.vue";
+import TableItemComponent from "./components/TableItemComponent.vue";
 
 app.component('example-component', ExampleComponent);
 app.component('navbar',Navbar);
@@ -31,6 +33,8 @@ app.component('footer-component',FooterComponent);
 app.component('background-component',BackgroundComponent);
 app.component('sidebar-component',SidebarComponent);
 app.component('sidebar-item',SidebarItemComponent);
+app.component('table-component',TableComponent);
+app.component('table-item',TableItemComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
