@@ -25,6 +25,7 @@ import SidebarComponent from "./components/SidebarComponent.vue";
 import SidebarItemComponent from "./components/SidebarItemComponent.vue";
 import TableComponent from "./components/TableComponent.vue";
 import TableItemComponent from "./components/TableItemComponent.vue";
+import FormComponent from "./components/FormComponent.vue";
 
 app.component('example-component', ExampleComponent);
 app.component('navbar',Navbar);
@@ -35,6 +36,7 @@ app.component('sidebar-component',SidebarComponent);
 app.component('sidebar-item',SidebarItemComponent);
 app.component('table-component',TableComponent);
 app.component('table-item',TableItemComponent);
+app.component('form-component',FormComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
