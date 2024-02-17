@@ -11,16 +11,18 @@
 
     <!-- Scripts -->
     @yield('extra-css')
+
+    <!-- Incluye jQuery -->
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 <body class="h-full w-full bg-gray-50 dark:bg-gray-900"> 
     <div id="app">
         <navbar url="{{route('home')}}" image="{{asset("black/img/monone.png")}}">
             @if (Auth::check())
-                <navbar-item name="Login" url ="{{route('registroApi')}}"></navbar-item>
-                <navbar-item name="Registro" url ="{{route('registroApi')}}"></navbar-item>
-                <navbar-item name="Registro" url ="{{route('registroApi')}}"></navbar-item>
-                <navbar-item name="Registro" url ="{{route('registroApi')}}"></navbar-item>
+                <navbar-item name="Login" url ="{{route('home')}}"></navbar-item>
+                <navbar-item name="Registro" url ="{{route('home')}}"></navbar-item>
+                <navbar-item name="Registro" url ="{{route('home')}}"></navbar-item>
+                <navbar-item name="Registro" url ="{{route('home')}}"></navbar-item>
             @endif
         </navbar>
 

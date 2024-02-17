@@ -5,6 +5,7 @@
  */
 import jQuery from 'jquery';
 window.$ = jQuery;
+
 import 'flowbite';
 import './bootstrap';
 import { createApp } from 'vue';
