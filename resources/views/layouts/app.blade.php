@@ -19,10 +19,18 @@
     <div id="app">
         <navbar url="{{route('home')}}" image="{{asset("black/img/monone.png")}}">
             @if (Auth::check())
-                <navbar-item name="Login" url ="{{route('home')}}"></navbar-item>
-                <navbar-item name="Registro" url ="{{route('home')}}"></navbar-item>
-                <navbar-item name="Registro" url ="{{route('home')}}"></navbar-item>
-                <navbar-item name="Registro" url ="{{route('home')}}"></navbar-item>
+                <navbar-item name="Login" url = "{{route('home')}}"></navbar-item>
+                <navbar-item name="Registro" url = "{{route('home')}}"></navbar-item>
+                <navbar-item name="Registro" url = "{{route('home')}}"></navbar-item>
+                <navbar-item name="Registro" url = "{{route('home')}}"></navbar-item>
+
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+                        Cerrar Sesión
+                    </button>
+                </form>
+
             @endif
         </navbar>
 
