@@ -19,7 +19,7 @@
 
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
-        <div class="relative  overflow-hidden rounded-lg md:h-[750px] h-56">
+        <div class="relative  overflow-hidden rounded-lg md:h-[800px] h-56">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{asset('black/img/monone.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
