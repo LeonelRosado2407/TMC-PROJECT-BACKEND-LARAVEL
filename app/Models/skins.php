@@ -16,6 +16,7 @@ class skins extends Model
     protected $fillable = [
         'nombre',
         'precio',
+        'estatus',
         'imagen'
     ];
 

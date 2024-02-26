@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\skins;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SkinsController extends Controller
 {
@@ -12,7 +13,16 @@ class SkinsController extends Controller
      */
     public function index()
     {
-        //
+        $skins = skins::where('estatus', 1)->get();
+        foreach ($skins as $key => $value) {
+            $image = Storage::url($value->imagen);
+            $value->imagen = $image;
+        }
+        // dd($skins);
+        return view('pages.skins.index',[
+            'skins' => $skins
+
+        ]);
     }
 
     /**
@@ -20,7 +30,7 @@ class SkinsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.skins.create');
     }
 
     /**
@@ -28,7 +38,36 @@ class SkinsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'name' => 'required|max:150',
+            'price' => 'required|max:10',
+            'status' => 'required',
+            'imgUpload' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+        
+        $imageName = $request->imgUpload->getClientOriginalName();
+        // dd($imageName);
+        $request->imgUpload->storeAs('images', $imageName, 'public');
+
+        // Create a new Skins instance and save the image path
+        $skins = new Skins();
+        $skins->nombre = $request->name;
+        $skins->precio = $request->price;
+        $skins->estatus = $request->status;
+        $skins->imagen = "images/skins/".$imageName;
+        $skins->save();
+
+        return redirect()->route('skins.index')->with('success', 'Skin created successfully.');
+        
+
+        $skins = new Skins();
+        $skins->nombre = $request->name;
+        $skins->precio = $request->price;
+        $skins->estatus = $request->status;
+        $skins->save();
+        return redirect()->route('skins.index')->with('success', 'Skin created successfully.');
+
     }
 
     /**

@@ -27,6 +27,8 @@ import SidebarItemComponent from "./components/SidebarItemComponent.vue";
 import TableComponent from "./components/TableComponent.vue";
 import TableItemComponent from "./components/TableItemComponent.vue";
 import FormComponent from "./components/FormComponent.vue";
+import UploadFileComponent from "./components/UploadFileComponent.vue";
+import InputRequiredComponent from "./components/InputRequiredComponent.vue";
 
 app.component('example-component', ExampleComponent);
 app.component('navbar',Navbar);
@@ -38,6 +40,8 @@ app.component('sidebar-item',SidebarItemComponent);
 app.component('table-component',TableComponent);
 app.component('table-item',TableItemComponent);
 app.component('form-component',FormComponent);
+app.component('upload-file',UploadFileComponent);
+app.component('input-required',InputRequiredComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
