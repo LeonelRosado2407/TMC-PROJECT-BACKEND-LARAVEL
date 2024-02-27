@@ -3,7 +3,7 @@
 use App\Http\Controllers\config\PermisosController;
 use App\Http\Controllers\payments\StripePaymentController;
 use App\Http\Controllers\ShopController;
-use App\Http\Controllers\SkinsController;
+use App\Http\Controllers\config\SkinsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 

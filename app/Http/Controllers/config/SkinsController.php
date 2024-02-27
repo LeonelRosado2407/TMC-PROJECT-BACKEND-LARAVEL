@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\config;
 
+use App\Http\Controllers\Controller;
 use App\Models\skins;
 use Exception;
 use Illuminate\Http\Request;
