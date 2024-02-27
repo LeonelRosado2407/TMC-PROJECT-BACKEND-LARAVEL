@@ -69,7 +69,7 @@
                 @foreach ($skins as $skin)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <img src="{{ $skin->imagen }}" alt="Imagen de la Skin">
+                            <img src="{{ $skin->imagen }}" alt="Imagen de la Skin" class="w-24 h-auto">
                         </th>
                         <td class="px-6 py-4">
                             {{$skin->nombre}}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\skins;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class SkinsController extends Controller
@@ -14,9 +15,26 @@ class SkinsController extends Controller
     public function index()
     {
         $skins = skins::where('estatus', 1)->get();
-        foreach ($skins as $key => $value) {
-            $image = Storage::url($value->imagen);
-            $value->imagen = $image;
+        foreach ($skins as $skin) {
+            // Recuperar la imagen del storage
+            if ($skin->imagen != null) {
+                $path = $skin->imagen;
+                $extension = explode('.', $path);
+                $imageData = Storage::disk('public')->get($path);
+                $base64Image = base64_encode($imageData);
+                $base64Image = 'data:image/' . $extension[1] . ';base64,' . $base64Image;
+                // Asignar la imagen codificada al objeto skin
+                $skin->imagen = $base64Image;
+            }else{
+                $path = public_path('black\img\default.png');
+                $extension = explode('.', $path);
+                $imageData = File::get($path);
+                $base64Image = base64_encode($imageData);
+                $base64Image = 'data:image/' . $extension[1] . ';base64,' . $base64Image;
+                // Asignar la imagen codificada al objeto skin
+                $skin->imagen = $base64Image;
+            }
+            
         }
         // dd($skins);
         return view('pages.skins.index',[
@@ -46,9 +64,8 @@ class SkinsController extends Controller
             'imgUpload' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         
-        $imageName = $request->imgUpload->getClientOriginalName();
-        // dd($imageName);
-        $request->imgUpload->storeAs('images', $imageName, 'public');
+        $imageName = uniqid() . '.' . $request->imgUpload->getClientOriginalExtension();
+        $request->imgUpload->storeAs('images/skins', $imageName, 'public');
 
         // Create a new Skins instance and save the image path
         $skins = new Skins();
@@ -59,15 +76,6 @@ class SkinsController extends Controller
         $skins->save();
 
         return redirect()->route('skins.index')->with('success', 'Skin created successfully.');
-        
-
-        $skins = new Skins();
-        $skins->nombre = $request->name;
-        $skins->precio = $request->price;
-        $skins->estatus = $request->status;
-        $skins->save();
-        return redirect()->route('skins.index')->with('success', 'Skin created successfully.');
-
     }
 
     /**
