@@ -24,9 +24,12 @@
 
 <script>
     export default {
+        props:{
+            value: {String, default: ''}
+        },
         data() {
             return {
-                image: null
+                image: this.value
             };
         },
         methods: {

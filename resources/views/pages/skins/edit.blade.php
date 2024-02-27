@@ -30,7 +30,7 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                     </svg>
                     <a href="{{route('skins.create')}}"class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
-                        Agregar Skins
+                        Editar Skin
                     </a>
                 </div>
             </li>
@@ -38,20 +38,22 @@
     </div>
     {{-- fin de breadcrumb --}}
     <div class="flex flex-col pt-5 pb-5 md:pt-10">
-        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Agregar Skin</h5>
+        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Editar Skin <span class=" text-green-400">{{ $skin->nombre }}</span></h5>
         <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Aquí se agregan, actualizan o eliminan las skins disponibles en el juego</p>
     </div>
 
     {{-- incio del formulario --}}
        
-    <form class="max-w-full mx-auto" action="{{route('skins.store')}}" method="POST" enctype="multipart/form-data">
+    <form class="max-w-full mx-auto" action="{{route('skins.update',Crypt::encrypt($skin->id))}}" method="POST" enctype="multipart/form-data">
+        @method('PUT')
         @csrf
+
         {{-- campos del formulario --}}
             @include('pages.skins.form')
         {{-- fin de campos de formulario --}}
 
-        <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-            Agregar Skin
+        <button type="submit" class="text-white bg-yellow-700 hover:bg-yellow-800 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+            Editar Skin
         </button>
 
     </form>

@@ -75,7 +75,7 @@
                             {{$skin->nombre}}
                         </td>
                         <td class="px-6 py-4">
-                            {{$skin->precio}}
+                            $ {{number_format($skin->precio,2)}}
                         </td>
                         <td class="px-6 py-4">
                             @if ($skin->estatus)
@@ -85,14 +85,19 @@
                             @endif
                         </td>
                         <td class="px-6 py-4">
-                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                            <form action="{{route('skins.edit',Crypt::encrypt($skin->id))}}" method="GET">
+                                <button type="submit" class="px-2 py-1 font-semibold leading-tight text-yellow-500 bg-yellow-100 rounded-full dark:bg-yellow-500 dark:text-yellow-100" >Editar</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
 
             </tbody>
         </table>
-        <nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
+        
+        {{$skins->links()}}
+
+        {{-- <nav class="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
             <span class="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
             <ul class="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
                 <li>
@@ -117,7 +122,7 @@
             <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
                 </li>
             </ul>
-        </nav>
+        </nav> --}}
     </div>
     {{-- fin de la tabla --}}
         
