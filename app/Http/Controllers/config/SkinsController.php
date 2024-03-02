@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Expr\Cast\String_;
 
 class SkinsController extends Controller
 {
@@ -72,9 +73,16 @@ class SkinsController extends Controller
 
         }
 
-        $skins->save();
+        $create = $skins->save();
+        if ($create) {
+            $status = true;
+            $message = 'Skin Creada Correctamente';
+        }else{
+            $status = false;
+            $message = 'Error al crear la skin';
+        }
 
-        return redirect()->route('skins.index')->with('success', 'Skin created successfully.');
+        return redirect()->route('skins.index')->with('status', $status)->with('message', $message);
     }
 
     /**
@@ -135,9 +143,16 @@ class SkinsController extends Controller
 
             }
 
-            $skin->save();
+            $edited = $skin->save();
+            if ($edited) {
+                $status = true;
+                $message = 'Skin Actualizada Correctamente';
+            }else{
+                $status = false;
+                $message = 'Error al actualizar la skin';
+            }
 
-        return redirect()->route('skins.index')->with('success', 'Skin updated successfully.');
+        return redirect()->route('skins.index')->with('status', $status)->with('message', $message);
 
         } catch (Exception $exception) {
             dd($exception->getMessage());
@@ -156,9 +171,26 @@ class SkinsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(skins $skins)
+    public function destroy(String $id)
     {
-        //
+        try {
+            $id = Crypt::decrypt($id);
+            $skin = skins::findorFail($id);
+            $skin->estatus = 0;
+            $deleted = $skin->save();
+            if ($deleted) {
+                $status = true;
+                $message = 'Skin Eliminada Correctamente';
+            }else{
+                $status = false;
+                $message = 'Error al eliminar la skin';
+            }
+
+            return redirect()->route('skins.index')->with('status', $status)->with('message', $message);
+        } catch (Exception $exception) {
+            dd($exception->getMessage());
+            return redirect()->route('skins.index')->with('error', 'Invalid skin ID');
+        }
     }
 
     function getImage($skinId) : skins{
