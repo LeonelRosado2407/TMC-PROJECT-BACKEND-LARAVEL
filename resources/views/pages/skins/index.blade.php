@@ -127,6 +127,8 @@
     {{-- fin de la tabla --}}
         
 </div>
+@include('helpers.alert')
+
 @endsection
 
 @section('extra-scripts')

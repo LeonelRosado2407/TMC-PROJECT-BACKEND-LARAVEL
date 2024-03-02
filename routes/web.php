@@ -4,6 +4,7 @@ use App\Http\Controllers\config\PermisosController;
 use App\Http\Controllers\payments\StripePaymentController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\config\SkinsController;
+use App\Http\Controllers\UserDataController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,7 @@ Route::get('/prueba', function () {
 
 //rutas de configuraciones
 Route::middleware(['auth'])->group(function () {
+    Route::resource('/userData', UserDataController::class)->names('userData');
     Route::resource('/permisos', PermisosController::class)->names('permisos');
     Route::resource('/skins', SkinsController::class)->names('skins');
 });

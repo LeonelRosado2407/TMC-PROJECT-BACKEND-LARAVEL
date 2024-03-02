@@ -48,7 +48,9 @@ export default {
     'Segoe UI Emoji', 
     'Segoe UI Symbol', 
     'Noto Color Emoji'
-  ]
+  ],
+  'gomarice':['GomariceRocks', 'sans-serif'],
+  'rocko':['Rocko', 'sans-serif'],
     }
   },
   plugins: [

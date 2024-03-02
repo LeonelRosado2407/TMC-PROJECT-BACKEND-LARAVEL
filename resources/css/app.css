@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'GomariceRocks';
+    src: url('../../public/fonts/gomarice_rocks.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Rocko';
+    src: url('../../public/fonts/rocko.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
