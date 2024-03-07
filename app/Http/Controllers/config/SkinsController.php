@@ -70,7 +70,6 @@ class SkinsController extends Controller
             $imageName = uniqid() . '.' . $request->imgUpload->getClientOriginalExtension();
             $request->imgUpload->storeAs('images/skins', $imageName, 'public');
             $skins->imagen = "images/skins/".$imageName;
-
         }
 
         $create = $skins->save();
