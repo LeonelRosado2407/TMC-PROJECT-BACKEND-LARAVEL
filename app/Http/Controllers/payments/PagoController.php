@@ -1,49 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\payments;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Stripe\Charge;
-use Stripe\Stripe;
+namespace App\Http\Controllers;
 use App\Models\skins;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 
-class StripePaymentController extends Controller
+
+class PagoController extends Controller
 {
-    public function index(Request $request)
-    {
-        $skins = skins::where('id',$request->query('id'))->first();
-        $skins->imagen = $this->getImage($skins->id);
-    
-        $user = Auth::user();
+    function index() {
 
+        $skins = skins::all();
         
-
-        return view('pages.payment.stripe.payment', ["skins"=>$skins], ["user"=>$user]);
-    }
-
-    public function makePayment(Request $request)
-    {
-        //set stripe secret key
-        Stripe::setApiKey(config('services.stripe.secret'));
-
-        try {
-            $charge = Charge::create([
-                'amount' => 100,
-                'currency' => 'usd',
-                'source' => $request->stripeToken,
-                'description' => 'Test payment from itsolutionstuff.com.'
-            ]);
-            return view('pages.payment.stripe.payments-success');
-        } catch (\Exception $ex) {
-            return $ex->getMessage(); // Manejo de errores, puedes redirigir a una página de error.
+        foreach ($skins as $skin) {
+            $skin-> imagen = $this->getImage($skin->id);
         }
-    }
+       // dd($skins);
 
+        return view('pages.shop.index',["skins"=>$skins] ); 
+    }
 
     public function getImage($id){
         $skins = skins::where('id',$id)->first();
@@ -77,4 +53,5 @@ class StripePaymentController extends Controller
 
         return $imagenUrl;
     }
+
 }

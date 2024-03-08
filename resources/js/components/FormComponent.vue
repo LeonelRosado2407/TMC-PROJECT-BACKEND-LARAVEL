@@ -1,7 +1,7 @@
 <template>
-    <div className="flex justify-center items-center h-screen">
+    <div className="mx-auto flex justify-center items-center h-screen ">
         <div className="mx-auto flex flex-col items-center bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 p-6 rounded-md max-w-lg">
-            <form className="max-w-sm mx-auto">
+            <form className="max-w-md mx-auto">
                 <h5 className=" flex justify-center block mb-2 text-sm font-medium text-gray-900 dark:text-white">Agregar/editar</h5>
                 <br>
                 <div className="mb-5">

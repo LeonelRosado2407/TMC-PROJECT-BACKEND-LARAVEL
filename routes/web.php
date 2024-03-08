@@ -8,6 +8,7 @@ use App\Http\Controllers\UserDataController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/payment',[StripePaymentController::class,'index'])->name('payment');
     Route::post('/payment',[StripePaymentController::class,'makePayment'])->name('makePayment');
 });
+
 
 
 
