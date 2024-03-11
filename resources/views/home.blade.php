@@ -11,9 +11,73 @@
                 <img src="{{ asset('black/img/monone.png') }}" alt="Logo 1" class="w-16 h-16 md:w-32 md:h-32 lg:w-64 lg:h-64 mr-4">
                 <img src="{{ asset('black/img/Abreviatura TMC.png') }}" alt="Logo 2" class="w-16 h-16 md:w-32 md:h-32 lg:w-64 lg:h-64 sm:w-16 sm:h-16">
             </div>
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">The Cococnuts Monkey</h1>
+            <h1 class="mb-4 text-2xl font-gomarice text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">The Cococnuts Monkey</h1>
         </div>
     </section>
+    <marquee behavior="scroll" direction="left" scrollamount="10" class="text-white bg-black">The Coconuts Monkey</marquee>
+    
+
+    {{-- pruebas --}}
+    <section class="bg-center bg-no-repeat bg-gray-900 bg-blend-multiply" >
+    <div class="video-container flex items-center justify-center space-x-5">
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-5">
+                <video class="max-w-medium h-auto max-w-full mt-2 mx-2" controls>
+                    <source src="black/img/1.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+            <div class="px-5 pb-5">
+                    <h5 class="text-2xl font-rocko font-semibold tracking-tight text-gray-900 dark:text-white">Exploracion</h5>
+                    <h2 class="text-m font-gomarice tracking-tight text-withe-900 dark:text-white">Adentrate en las habitaciones de tus roomies
+                        busca inspiracion para elaborar la cancion que lograra pagar la renta.
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-5">
+                <video class="max-w-medium h-auto max-w-full mt-2 mx-2" controls>
+                    <source src="black/img/2.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+            <div class="px-5 pb-5">
+                <a href="#">
+                    <h5 class="text-2xl font-rocko font-semibold tracking-tight text-gray-900 dark:text-white">Jugabilidad</h5>
+                    <h2 class="text-m font-gomarice tracking-tight text-withe-900 dark:text-white">Enfrentate a Promesa, para conseguir 
+                        un fragmento de la cancion que salvara a los pratogonistas de vivir en la calle.
+                    </h2>
+                </a>
+            </div>
+        </div>
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="p-5">
+                <video class="max-w-medium h-auto max-w-full mt-2 mx-2" controls>
+                    <source src="black/img/3.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+            <div class="px-5 pb-5">
+                <a href="#">
+                    <h5 class="text-2xl font-rocko font-semibold tracking-tight text-gray-900 dark:text-white">Minijuego</h5>
+                    <h2 class="text-m font-gomarice tracking-tight text-withe-900 dark:text-white">Haz visto una skin que te guste pero eres pobre?
+                        bueno con nuestro pequeño mini juego ayuda a mon a conseguir monedas para comprar una skin sin gastar dinero real :D
+                    </h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+    {{-- pruebas --}}
+
+
+
+
+
+
 
     {{-- carrusel --}}
 
@@ -22,23 +86,19 @@
         <div class="relative  overflow-hidden rounded-lg md:h-[800px] h-56">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/monone.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/monone.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/monone.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/monone.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <!-- Item 5 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/monone.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
         </div>
         <!-- Slider indicators -->
@@ -68,66 +128,31 @@
         </button>
     </div>
 
-    {{-- grid --}}
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="grid gap-4">
-            <div>
-                <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Read more
-                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
-            </div>
-        </div>
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
-            </div>
-        </div>
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
-            </div>
-        </div>
-        <div class="grid gap-4">
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
-            </div>
-        </div>
-    </div>
+    {{-- prueba 3 --}}
+    <hr class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
+    {{-- prueba3 --}}
     
+        <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Te estamos esperando!!!</h5>
+            <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Sumergete en esta aventura y ayuda a estos foraneos a pagar la renta :D</p>
+            <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                <a href="#" >                  
+                <button type="button" class=" text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 px-5 py-3 text-base font-medium text-center text-white rounded-lg ">Descarga ya!</button>
+                </a>
+            </div>
+        </div>
+
+ 
+    {{-- pruebas2 --}}
+
+    
+
+
+
+
+    
+
+    {{-- pruebas2 --}}
 
 
     
