@@ -30,6 +30,7 @@ import FormComponent from "./components/FormComponent.vue";
 import UploadFileComponent from "./components/UploadFileComponent.vue";
 import InputRequiredComponent from "./components/InputRequiredComponent.vue";
 import InputComponent from "./components/profile/inputComponent.vue";
+import PayCartComponent from "./components/PayCartComponent.vue";
 
 app.component('example-component', ExampleComponent);
 app.component('navbar',Navbar);
@@ -44,6 +45,7 @@ app.component('form-component',FormComponent);
 app.component('upload-file',UploadFileComponent);
 app.component('input-required',InputRequiredComponent);
 app.component('input-profile',InputComponent);
+app.component('paycart',PayCartComponent);
 
 /**
  * The following block of code may be used to automatically register your

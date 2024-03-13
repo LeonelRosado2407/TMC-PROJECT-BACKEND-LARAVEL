@@ -15,6 +15,7 @@
         </div>
         <div class="relative z-0 w-full mb-5 pr-10 group">
             <input-required 
+            
             name="price" 
             texto="Precio de la Skin" 
             @if (isset($errors) && $errors->has('price'))

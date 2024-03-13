@@ -6,11 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Stripe\Charge;
 use Stripe\Stripe;
+use Stripe\Customer;
+use Stripe\ApiOperations\Create;
+use Stripe\Http\Cur\Client;
+use Stripe\ApiRequestor;
 use App\Models\skins;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Pagos\StripeProcessor;
 
 class StripePaymentController extends Controller
 {
@@ -28,21 +33,50 @@ class StripePaymentController extends Controller
 
     public function makePayment(Request $request)
     {
-        //set stripe secret key
-        Stripe::setApiKey(config('services.stripe.secret'));
+        $datos = $request->all();
 
-        try {
-            $charge = Charge::create([
-                'amount' => 100,
-                'currency' => 'usd',
-                'source' => $request->stripeToken,
-                'description' => 'Test payment from itsolutionstuff.com.'
-            ]);
-            return view('pages.payment.stripe.payments-success');
-        } catch (\Exception $ex) {
-            return $ex->getMessage(); // Manejo de errores, puedes redirigir a una página de error.
-        }
-    }
+        $skin = skins::where('id',$request->input('idskin'))->first();
+
+        $user = Auth::user();
+
+
+
+        		//aqui se procesa el pago
+		$stripe=new StripeProcessor();
+		$objeto_pago=new \StdClass();
+		$objeto_pago->amount=$skin['precio'] * 100;
+		//dd($objeto_pago->amount);
+		$objeto_pago->currency_code='MXN';
+		$objeto_pago->producto=$skin['nombre'];
+		$objeto_pago->email=$user['email'];
+		$objeto_pago->token=$request->input('stripetoken');
+		$objeto_pago->item_number=$skin['id'];
+
+		$stripeResponse= $stripe->enviar_datos_pago($objeto_pago);
+		//dd($stripeResponse);
+		//Poner todos los processos de post venta 
+		if($stripeResponse->status=='OK'){
+
+			//dd($stripeResponse->status);
+			return [$stripeResponse->status];
+			// $bowardrobe=new BoWardrobe();
+			// $objeto_status=new \StdClass();
+			// $objeto_status->idskins=$skins->idskins;
+			// $res_status=$bowardrobe->nueva_skin($objeto_status);
+
+
+		}
+		//dd($datos);
+		//return response()->json($stripeResponse);
+		
+
+
+        
+
+
+    
+        return [$datos, $skin, $user['email'], $request->input('stripetoken'), $skin['id'], $skin['precio'] * 100];
+     }
 
 
     public function getImage($id){
