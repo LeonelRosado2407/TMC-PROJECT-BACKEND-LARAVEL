@@ -14,7 +14,7 @@
             <h1 class="mb-4 text-2xl font-gomarice text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">The Cococnuts Monkey</h1>
         </div>
     </section>
-    <marquee behavior="scroll" direction="left" scrollamount="10" class="text-white bg-black">The Coconuts Monkey</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="10" class="text-white font-gomarice bg-black">The Coconuts Monkey</marquee>
     
 
     {{-- pruebas --}}
@@ -86,19 +86,15 @@
         <div class="relative  overflow-hidden rounded-lg md:h-[800px] h-56">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/1.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/2.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-            </div>
-            <!-- Item 4 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{asset('black/img/pruebao.jpg')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img src="{{asset('black/img/3.png')}}" class="absolute block w-[50%] h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
             </div>
         </div>
         <!-- Slider indicators -->
@@ -133,11 +129,11 @@
     {{-- prueba3 --}}
     
         <div class="w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Te estamos esperando!!!</h5>
-            <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Sumergete en esta aventura y ayuda a estos foraneos a pagar la renta :D</p>
+            <h5 class="mb-2 text-3xl font-gomarice  font-bold text-gray-900 dark:text-white">Te estamos esperando!!!</h5>
+            <p class="mb-5 text-base font-gomarice text-gray-500 sm:text-lg dark:text-gray-400">Sumergete en esta aventura y ayuda a estos foraneos a pagar la renta :D</p>
             <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
                 <a href="#" >                  
-                <button type="button" class=" text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 px-5 py-3 text-base font-medium text-center text-white rounded-lg ">Descarga ya!</button>
+                <button type="button" class=" font-gomarice text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 px-5 py-3 text-base font-medium text-center text-white rounded-lg ">Descarga ya!</button>
                 </a>
             </div>
         </div>
