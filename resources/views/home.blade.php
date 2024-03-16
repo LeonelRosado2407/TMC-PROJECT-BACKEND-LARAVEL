@@ -3,6 +3,7 @@
 
 @section('content')
     {{-- jumbotron --}}
+    <marquee behavior="scroll" direction="left" scrollamount="10" class="text-white font-gomarice bg-black">The Coconuts Monkey</marquee>
 
     <section class="bg-center bg-no-repeat  bg-gray-900 bg-blend-multiply"  style="background-image: url('{{asset('black/img/fondo.png')}}')">
         {{-- <section class="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-900 bg-blend-multiply"> --}}
@@ -14,7 +15,6 @@
             <h1 class="mb-4 text-2xl font-gomarice text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">The Cococnuts Monkey</h1>
         </div>
     </section>
-    <marquee behavior="scroll" direction="left" scrollamount="10" class="text-white font-gomarice bg-black">The Coconuts Monkey</marquee>
     
 
     {{-- pruebas --}}
@@ -123,6 +123,40 @@
             </span>
         </button>
     </div>
+
+    <section class="bg-gray-900">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="mr-auto place-self-center lg:col-span-7">
+                <h1 class="font-gomarice max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+                    Conoce a King 
+                </h1>
+                <p class=" font-gomarice max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl text-gray-400">
+                    Un ser adicto a League of Legends, la pizza  y a The Weeknd
+                </p>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                <img src="{{asset('black/img/sadBoy.png')}}" alt="mockup" class=" rounded-lg">
+            </div>                
+        </div>
+    </section>
+
+    <section class="bg-gray-900">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                <img src="{{asset('black/img/pxndx.png')}}" alt="mockup" class=" rounded-lg">
+            </div>  
+            <div class="ml-auto place-self-center lg:col-span-7">
+                <h1 class="font-gomarice max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
+                    Conoce a Mon y Coco
+                </h1>
+                <p class=" font-gomarice max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl text-gray-400">
+                    Unos malaventurados que no lloran, pero si sufren por la renta
+                </p>
+            </div>
+              
+        </div>
+    </section>
+
 
     {{-- prueba 3 --}}
     <hr class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
