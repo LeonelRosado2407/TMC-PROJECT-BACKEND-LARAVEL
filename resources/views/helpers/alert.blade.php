@@ -20,7 +20,7 @@
                 background: "#1F2937",
                 confirmButtonText: 'Aceptar',
                 confirmButtonColor: '#F05252'
-            });
+            }); 
         </script>
 
     @endif

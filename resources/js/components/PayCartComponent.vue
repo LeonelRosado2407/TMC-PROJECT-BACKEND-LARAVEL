@@ -3,21 +3,7 @@
             
         <h3 class="text-3xl font-bold dark:text-white">Vamos a terminar la compra</h3>
         <br/>
-        <div class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300" role="alert">
-        </div>
         <br/>
-        <div v-show="error" class="p-4 mb-4 text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800" role="alert">
-            <div class="flex items-center">
-                    <svg class="flex-shrink-0 w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-                    </svg>
-                    <span class="sr-only">Info</span>
-                    <h3 class="text-lg font-medium">Alerta de Datos</h3>
-            </div>
-            <div class="mt-2 mb-4 text-sm">
-                No llenaste datos de la targeta
-            </div>
-        </div>
         <form class="max-w-sm mx-auto"  @submit.prevent="comprar">
             
             <label for="card-number-input" class="sr-only">Nombre Completo</label>
@@ -50,8 +36,43 @@
             </div>
             <button type="submit" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
             Comprar ahora</button>
-        </form>
+    </form>
         
+</div>
+<div v-if="mostrarModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75">
+    <div class="bg-green-400 rounded-lg p-8 max-w-md">
+        <div v-if="comprando">
+            <div class="text-xl text-purple-700 font-gomarice mb-5">Procesado Compra</div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a11" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#6A4EDC"></stop><stop offset=".3" stop-color="#6A4EDC" stop-opacity=".9"></stop><stop offset=".6" stop-color="#6A4EDC" stop-opacity=".6"></stop><stop offset=".8" stop-color="#6A4EDC" stop-opacity=".3"></stop><stop offset="1" stop-color="#6A4EDC" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a11)" stroke-width="14" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="1.5" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#6A4EDC" stroke-width="14" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
+            <div class="text-xl text-white font-gomarice mb-5">Esto puede tardar varios segundos</div>
+
+        </div>
+        <div v-if="compraRealizada">
+            <div class="text-xl text-white font-gomarice mb-5">Compra Realizada!!!</div>
+            <div class="flex justify-center mt-4">
+                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        Ver compra
+                    </span>
+                </button>
+                <button @click="cerrarModal" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        Seguir comprando
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div v-if="Errorcompra">
+            <div class="text-xl text-red-600 font-gomarice mb-5">hubo un error en la compra</div>
+            <div class="flex justify-center mt-4">
+                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        Regresar a la tienda
+                    </span>
+                </button>
+            </div>
+        </div>          
+    </div>
 </div>
 
 
@@ -64,7 +85,8 @@ export default {
  
         idskin : String,
         token : String,
-        url : String
+        url : String,
+        urlshop: String,
     },
     data() {
         return {
@@ -77,15 +99,34 @@ export default {
             idSkin : this.idskin,
             tokenlaravel: this.token,
             url: this.url,
-            mostrarModal: false
+            urlshop: this.urlshop,
+            mostrarModal: false,
+            compraRealizada: false,
+            comprando: false,
+            Errorcompra: false
 
         };
     },
     methods: {
+        cerrarModal() {
+
+            //this.mostrarModal = false;
+            window.location.href = this.urlshop;
+
+            
+           
+           
+        },
         comprar() {
-            this.mostrarModal = true;
+           
+           
 
             const comp = this;
+            //this.$refs['modal'].show()
+            this.mostrarModal = true;
+            this.comprando = true;
+            
+            
 
             const exp = this.cardexpiration.split('/');
             console.log(this.nombrecompleto);
@@ -140,6 +181,10 @@ export default {
                     ).then(
                         (response) => {
                             console.log(response)
+                            comp.comprando = false;
+                            comp.compraRealizada = true;
+                            
+
                            
 
 
@@ -147,6 +192,10 @@ export default {
                     ).catch(
                         (error)=>{
                             console.error(error);
+                            comp.comprando = false;
+                            comp.Errorcompra = true;
+
+                           
                         }
                     )
                 }
@@ -158,6 +207,8 @@ export default {
         },
     },
     mounted() {
+
+        console.log(this.urlshop);
 
         
     

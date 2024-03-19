@@ -39,6 +39,8 @@ class StripePaymentController extends Controller
 
         $user = Auth::user();
 
+        
+
 
 
         		//aqui se procesa el pago
@@ -63,6 +65,8 @@ class StripePaymentController extends Controller
 			// $objeto_status=new \StdClass();
 			// $objeto_status->idskins=$skins->idskins;
 			// $res_status=$bowardrobe->nueva_skin($objeto_status);
+
+            
 
 
 		}
