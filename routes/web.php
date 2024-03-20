@@ -4,6 +4,7 @@ use App\Http\Controllers\config\PermisosController;
 use App\Http\Controllers\payments\StripePaymentController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\config\SkinsController;
+use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\UserDataController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -43,6 +44,12 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/payment',[StripePaymentController::class,'index'])->name('payment');
     Route::post('/payment',[StripePaymentController::class,'makePayment'])->name('makePayment');
+});
+
+//rutas de perfil
+Route::middleware(['auth'])->group(function () {
+    Route::get('/perfil',[PerfilController::class,'index'])->name('perfil');
+    //Route::post('/payment',[PerfilController::class,'makePayment'])->name('makePayment');
 });
 
 

@@ -1,12 +1,12 @@
 <template>
     <div>   
             
-        <h3 class="text-3xl font-bold dark:text-white">Vamos a terminar la compra</h3>
+        <h3 class="text-4xl font-gomarice dark:text-white">Vamos a terminar la compra</h3>
         <br/>
         <br/>
-        <form class="max-w-sm mx-auto"  @submit.prevent="comprar">
+        <form class="max-w-sm mx-auto font-gomarice"  @submit.prevent="comprar">
             
-            <label for="card-number-input" class="sr-only">Nombre Completo</label>
+            <label for="card-number-input" class="sr-only  font-gomarice">Nombre Completo</label>
             <div class="relative">
                 <input v-model="nombrecompleto" id="nombrecompleto" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pe-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Nombre completo " required />
             </div>
@@ -18,7 +18,7 @@
                     <svg fill="none" class="h-6 text-[#1434CB] dark:text-white" viewBox="0 0 36 21"><path fill="currentColor" d="M23.315 4.773c-2.542 0-4.813 1.3-4.813 3.705 0 2.756 4.028 2.947 4.028 4.332 0 .583-.676 1.105-1.832 1.105-1.64 0-2.866-.73-2.866-.73l-.524 2.426s1.412.616 3.286.616c2.78 0 4.966-1.365 4.966-3.81 0-2.913-4.045-3.097-4.045-4.383 0-.457.555-.957 1.708-.957 1.3 0 2.36.53 2.36.53l.514-2.343s-1.154-.491-2.782-.491zM.062 4.95L0 5.303s1.07.193 2.032.579c1.24.442 1.329.7 1.537 1.499l2.276 8.664h3.05l4.7-11.095h-3.043l-3.02 7.543L6.3 6.1c-.113-.732-.686-1.15-1.386-1.15H.062zm14.757 0l-2.387 11.095h2.902l2.38-11.096h-2.895zm16.187 0c-.7 0-1.07.37-1.342 1.016L25.41 16.045h3.044l.589-1.68h3.708l.358 1.68h2.685L33.453 4.95h-2.447zm.396 2.997l.902 4.164h-2.417l1.515-4.164z"/></svg>
                 </div>
             </div>
-            <div class="grid grid-cols-3 gap-4 my-4">
+            <div class="grid grid-cols-3 gap-4 my-4 font-gomarice">
                 <div class="relative max-w-sm col-span-2">
                     <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

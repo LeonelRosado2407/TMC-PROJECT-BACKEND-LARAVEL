@@ -7,14 +7,14 @@
     <div class="flex flex-col p-5 md:flex-row w-full h-auto md:pl-10 md:ml-10">
         <div class="w-full md:w-1/2">
             <h1 class="mb-0.5 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl animate-pulse">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Tienda</span>
+                <span class="text-transparent font-gomarice bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Tienda</span>
             </h1>
         </div>
     </div>
     {{-- fin de sección de titulo --}}
 
     {{-- sección de destacados --}}
-    <h2 class=" pl-5 md-5 md:pl-10 md:ml-10 text-4xl font-extrabold dark:text-white">Destacados</h2>
+    <h2 class=" pl-5 md-5 md:pl-10 md:ml-10 text-4xl font-gomarice dark:text-white">Destacados</h2>
     <div class="flex flex-col md:flex-row">
         {{-- galeria de skins --}}
         <div id="gallery" class="relative w-full md:w-1/2  p-5" data-carousel="slide">
@@ -51,11 +51,11 @@
             
         {{-- skins con descuento --}}
         <div class="w-full md:w-1/2 p-5">
-        <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><span class="text-purple-600 dark:text-purple-500">Hey tu!!!!, Si tu , ¿Que no vas a Comprar?</span>   
+        <h2 class="mb-4 text-4xl font-gomarice leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"><span class="text-purple-600 dark:text-purple-500">Hey tu!!!!, Si tu , ¿Que no vas a Comprar?</span>   
         <br/>
         att: Mon</h2>
-            <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">Te perderas de presumir a los demas estas skins, jajajajjaja</p>
-             <span class="text-green-600 dark:text-green-500">No importa si es problema de plata puedes Ahorras las monedas del juego :( </span>
+            <p class="text-4xl font-rocko text-gray-500 lg:text-xl dark:text-gray-400">Te perderas de presumir a los demas estas skins, jajajajjaja</p>
+             <span class="text-green-600 font-rocko dark:text-green-500">No importa si es problema de plata puedes Ahorras las monedas del juego :( </span>
             <div class="h-5 md:h-10"></div>
 
         </div>
@@ -64,7 +64,7 @@
     {{-- fin de destacados --}}
 
     {{-- sección de skins diarias--}}
-    <h2 class=" pl-5 md-5 md:pl-10 md:ml-10 text-4xl font-extrabold dark:text-white">Skins Coco</h2>
+    <h2 class=" pl-5 md-5 md:pl-10 md:ml-10 text-4xl font-rocko dark:text-white">Todas las Rutas</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 md:p-10">
         @foreach($skins as $skin)
         <div>
@@ -74,17 +74,17 @@
                 </a>
                 <div class="px-5 pb-5">
                     <a href="#">
-                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ $skin -> nombre }}</h5>
+                        <h5 class="text-xl font-gomarice tracking-tight text-gray-900 dark:text-white">{{ $skin -> nombre }}</h5>
                     </a>
                     <div class="flex items-center justify-between">
-                        <span class="text-3xl font-bold text-gray-900 dark:text-white">{{ $skin -> precio }}</span>
+                        <span class="text-3xl font-gomarice text-gray-900 dark:text-white">{{ $skin -> precio }}</span>
                         <br> 
                         <br/>
                     </div>
                     <div class="flex items-center justify-between">
                         <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 dark:text-white dark:hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800"
                         >
-                        <a href="{{ route('payment', ['id' => $skin-> id ]) }}" class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        <a href="{{ route('payment', ['id' => $skin-> id ]) }}" class=" font-gomarice relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                             Comprar
                         </a>
                         </button>

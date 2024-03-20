@@ -11,6 +11,7 @@ use Stripe\ApiOperations\Create;
 use Stripe\Http\Cur\Client;
 use Stripe\ApiRequestor;
 use App\Models\skins;
+use App\Models\skinUser;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -60,11 +61,19 @@ class StripePaymentController extends Controller
 		if($stripeResponse->status=='OK'){
 
 			//dd($stripeResponse->status);
+            $skinUser = new skinUser();
+            $skinUser -> skin_id = $skin['id'];
+            $skinUser -> user_id = $user['id'];
+            $skinUser ->save();
+
+
+
 			return [$stripeResponse->status];
 			// $bowardrobe=new BoWardrobe();
 			// $objeto_status=new \StdClass();
 			// $objeto_status->idskins=$skins->idskins;
 			// $res_status=$bowardrobe->nueva_skin($objeto_status);
+
 
             
 
